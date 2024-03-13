@@ -10,11 +10,118 @@ body, html {
     font-size: 35px;
 }
 
+/* General adjustments for the login form */
+.form-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #181818;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto; 
+    margin-top: 5vh;
+  }
+  
+  /* Heading styles */
+  .form-signin .h3.mb-3.font-weight-normal {
+    color: #8858ed;
+    color: rgb(136 88 237 / 70%);
+    margin-bottom: 1rem;
+  }
+  
+  /* Input field adjustments */
+  .form-signin .form-control {
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    width: 55%;
+    background-color: #999; 
+    color: #fff; 
+    border: 2px solid #271d3e; 
+  }
+  /* .form-signin .sr-only {
+    color: #8858ed;
+    color: rgb(136 88 237 / 40%);
+    font-size: 20px;
+  } */
+  
+  /* Button adjustments for consistency */
+  .form-signin .btn.btn-lg.btn-primary.btn-block {
+    width: 50%;
+    height: 40px;
+    border-color: rgb(92 63 153 / 40%); 
+    border-radius: 50px;
+    color: #999;
+    font-size: large;
+  }
+  
+  /* Checkbox and text */
+  .form-signin .checkbox.mb-3 {
+    color: #8858ed;
+    color: rgb(136 88 237 / 75%);
+    font-size: medium;
+    padding-right: 2%;
+  }
+  
+  /* Footer text color */
+  .form-signin .mt-5.mb-3.text-muted {
+    color: #aaa;
+  }
+
+/* Custom checkbox label style */
+.custom-checkbox-label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px;
+    color: #8858ed; 
+    font-size: 20px; 
+    display: inline-block;
+  }
+  
+/* Custom checkbox appearance */
+.custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px; 
+    width: 16px; 
+    background-color: #999; 
+    border-radius: 3px; 
+    border: 2px solid #271d3e; 
+  }
+  
+  /* Checkmark appearance when checked */
+  .custom-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px; 
+    top: 3px; 
+    width: 3px; 
+    height: 7px; 
+    border: solid white;
+    border-width: 0 2px 2px 0; 
+    transform: rotate(45deg);
+  }
+  
+  /* Displaying the checkmark when the checkbox is checked */
+  .custom-checkbox-label input:checked + .custom-checkbox:after {
+    display: block;
+  }
+  
+  /* Style for checkbox hover - Optional */
+  .custom-checkbox:hover {
+    background-color: #bbb; 
+  }
+
 .header .logo {
     padding-top: 30px;
     padding-left: 10px;
 }
-
+.header .btn-primary {
+    margin: 25px;
+}
 .header ul {
     margin: 0;
     padding: 0;
@@ -116,14 +223,14 @@ input[type="text"], input[type="email"], input[type="password"] {
     background-color: #999; /* Light grey background */
     color: #333; /* Dark grey text */
     border: 2px solid #271d3e; /* Light grey border */
-    padding: 10px; /* Optional: Adds some padding inside the input box */
-    border-radius: 5px; /* Optional: Rounds the corners of the input box */
+    padding: 10px; /* Add some padding inside the input box */
+    border-radius: 5px; /* Round the corners of the input box */
 }
 
 /* Change the border color when an input box is clicked/focused */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #007bff; /* Bootstrap's primary blue */
-    outline: none; /* Removes the default focus outline */
+    border-color: #5c3f99; 
+    outline: none; 
 }
 
 .wave-container {
@@ -164,3 +271,37 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     background-color: #5c3f99; /* Even darker purple when hovering */
     border-color: #271d3e; /* Adjust border color on hover */
 }
+
+@media (max-width: 768px) {
+    body, html {
+      font-size: 16px; 
+    }
+  
+    .form-signin {
+      width: 90%; 
+      margin-top: 20vh; 
+      padding: 15px; 
+    }
+  
+    .form-signin .h3.mb-3.font-weight-normal {
+      font-size: 1.5rem; 
+    }
+  
+    .form-signin .form-control {
+      margin-top: 10px;
+      margin-bottom: 15px; 
+    }
+  
+    .form-signin .btn.btn-lg.btn-primary.btn-block {
+      padding: 10px;
+      padding-bottom: 8%;
+    }
+  
+    .header .menu-icon {
+      margin: 20px; 
+    }
+  
+    .wave-container svg {
+      height: 50px; 
+    }
+  }

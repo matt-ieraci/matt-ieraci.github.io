@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: blue;
+}
+.dropdown-menu {
+    padding-top: 200px;
+    margin: auto; /* This will center the div if it has a specified width */
+    width: 20%; /* Example width */
+    font-size: 16px;
+
+}
+
+a {
+    color: #999;
+    text-decoration: none;
+}
+
+.header {
+    background-color: black;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header .logo {
+
+    float: left;
+    display: block;
+    padding: 20px 20px;
+    
+    
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: black;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.header ul a:hover {
+    background-color: #333;
+    color: rgb(97 175 244);
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    padding: 2px 20px;
+    margin: 50px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #ecf0f1;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before {
+    background: #ecf0f1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px
+}
+
+.header .menu-icon .nav-icon::after {
+    background: #ecf0f1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 350px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media (min-width: 930px) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+        margin: 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: left;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: #ecf0f1;
+    text-align: right;
+}
+
+.footer .contact {
+    margin-bottom: 40px;
+    margin-left: 15px;
+    margin-right: 20px;
+    padding: 18px 50px;
+    color: #ecf0f1;;
+    background-color: rgba(97, 175, 244, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+}
+.footer .contact:hover {
+    background-color: rgba(97, 175, 244, 0.8);
+}

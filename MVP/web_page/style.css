@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/* style.css */
+body, html {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-size: 35px;
+}
+
+.header .logo {
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: black;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #8858ed;
+}
+
+.header ul a:hover {
+    background-color: #8858ed;
+    color: #271d3e;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    padding: 2px 20px;
+    margin: 50px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #ecf0f1;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before {
+    background: #ecf0f1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px
+}
+
+.header .menu-icon .nav-icon::after {
+    background: #ecf0f1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 350px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.logo {
+    max-width: 500px;
+    margin-bottom: 30px;
+    padding-top: 0px;
+}
+
+body div {
+    color: #8858ed;
+    color: rgb(136 88 237 / 75%);
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    background-color: #999; /* Light grey background */
+    color: #333; /* Dark grey text */
+    border: 2px solid #271d3e; /* Light grey border */
+    padding: 10px; /* Optional: Adds some padding inside the input box */
+    border-radius: 5px; /* Optional: Rounds the corners of the input box */
+}
+
+/* Change the border color when an input box is clicked/focused */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff; /* Bootstrap's primary blue */
+    outline: none; /* Removes the default focus outline */
+}
+
+.wave-container {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(0deg);
+}
+
+.wave-container svg {
+    display: block;
+    width: 200%;
+    height: 100px;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.wave-container path {
+    animation: wave-animation 10s linear infinite;
+}
+
+.btn-primary {
+    background-color: #8858ed; /* Darker purple */
+    border-color: #5c3f99; /* Even darker purol border */
+    margin-top: 20px; /* Adds space between the text and the button */
+}
+
+.btn-primary:hover {
+    background-color: #5c3f99; /* Even darker purple when hovering */
+    border-color: #271d3e; /* Adjust border color on hover */
+}

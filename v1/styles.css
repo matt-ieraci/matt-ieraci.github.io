@@ -30,8 +30,6 @@ a {
 }
 
 .header .logo {
-
-    float: left;
     display: block;
     padding: 20px 20px;
     

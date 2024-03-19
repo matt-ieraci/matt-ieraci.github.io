@@ -6,8 +6,15 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #000;
+    /* background: linear-gradient(to bottom right, rgb(219 61 133), rgb(232 145 90)); */
+    background: transparent;
     font-size: 35px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* General adjustments for the login form */
@@ -152,7 +159,7 @@ body, html {
     padding: 2px 20px;
     margin: 50px;
     position: relative;
-    float: right;
+    float: left;
     cursor: pointer;
 }
 
@@ -209,10 +216,21 @@ body, html {
     top: 0;
 }
 
-.logo {
-    max-width: 500px;
-    margin-bottom: 30px;
-    padding-top: 0px;
+.bannr {
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.bannr span{
+    width: 50px;
+    height: 100%;
+    background: #db0001;
+    position: absolute;
 }
 
 body div {
@@ -259,6 +277,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .wave-container path {
     animation: wave-animation 10s linear infinite;
+}
+
+.login-btn-primary {
+    background-color: #8858ed; /* Darker purple */
+    border-color: #5c3f99; /* Even darker purol border */
+    color: #fff;
+    margin-top: 20px; /* Adds space between the text and the button */
+    margin-right: 20px;
+    float: right;
 }
 
 .btn-primary {

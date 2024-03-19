@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
     <title>BANNR</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
 </head>
-<header class="header">
-    <a href="login.html" class="btn btn-primary btn-sm">Login</a>
-    <input class="menu-btn" type="checkbox" id="menu-btn">
-    <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
-    <ul class="menu">
-        <li ><a href="coming_soon.html">Products</a></li>
-        <li ><a href="coming_soon.html">Teams</a></li>
-        <li ><a href="coming_soon.html">Shop</a></li>
-    </ul> 
-</header>
 <body>
-<div class="container text-center mt-5">
-    <div class="row">
-        <div class="col">
-            <img src="images/BANNR.png" alt="Logo" class="logo">
-            <p>More than just a game..</p>
-            <a href="join.html" class="btn btn-primary btn-lg">Join Now</a>
+    <div class="main">
+        <a href="homepage.html">
+            <button class="bannr-home" data-text="Awesome">
+                <span class="actual-text">&nbsp;bannr&nbsp;</span>
+                <span aria-hidden="true" class="hover-text">&nbsp;bannr&nbsp;</span>
+            </button>
+        </a>
+
+        <div class="container">
+                <div class="radio-wrapper">
+                    <input class="input" name="btn" id="value-1" type="radio">
+                    <div class="btn">
+                        <span aria-hidden="">_</span>Login
+                        <span class="btn__glitch" aria-hidden="">_Log_in🦾</span>
+                        <label class="number">r1</label>
+                    </div>
+                </div>
+            <div class="radio-wrapper">
+                <input class="input" name="btn" id="value-2" checked="true" type="radio">
+                <div class="btn">
+                    Sign<span aria-hidden="">_Up</span>
+                    <span class="btn__glitch" aria-hidden="">_Sign Up_</span>
+                    <label class="number">r2</label>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="wave-container">
-    <svg viewBox="0 0 120 60" preserveAspectRatio="none">
-        <path d="M0,30 Q30,60 60,30 T120,30 T180,30 V60 H0 Z" fill="#8858ed"></path>
-    </svg>
-</div>
-
-<!-- Optional: Bootstrap JS and Popper.js -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+    document.getElementById('value-1').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = 'login_v2.html';
+        }
+    });
+    document.getElementById('value-2').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = 'join_v2.html';
+        }
+    });
+</script>

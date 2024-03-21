@@ -15,6 +15,38 @@ body {
     align-items: center; /* This centers everything in .main vertically */
 }
 
+.logo-to-home {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-to-home .a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ----------------------- HomePage Sidebar ----------------------- */ 
+.sidebar {
+  position: fixed; /* Or absolute, depending on your needs */
+  left: 0;
+  top: 0;
+  width: 250px; /* Sidebar width */
+  height: 100%; /* Full-height */
+  background-color: #f4f4f4; /* Sidebar background color */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+  transform: translateX(-100%); /* Start off-screen */
+  z-index: 100; /* Ensure it's above other content */
+}
+
+/* ----------------------- Landing Page Logo ----------------------- */ 
+
 /* === removing default button style ===*/
 .bannr-home {
     margin: 0;
@@ -23,6 +55,7 @@ body {
     padding: 0;
     border: none;
     cursor: pointer;
+    
 
   /* button styling */
     --border-right: 6px;
@@ -38,6 +71,7 @@ body {
     color: transparent;
     -webkit-text-stroke: 1px var(--text-stroke-color);
   }
+
   /* this is the text, when you hover on button */
   .hover-text {
     position: absolute;
@@ -57,12 +91,118 @@ body {
     filter: drop-shadow(0 0 23px var(--animation-color))
   }
 
+  .home-container {
+      display: flex;
+      position: fixed;
+      flex-direction: row;
+      /* position: absolute; */
+      top: 0;
+      right: 0;
+      padding-right: 15px;
+      padding-top: 5px;
+  }
+  
+  /* ----------------------- BANNR LOGO small ----------------------- */ 
+  .bannr-logo {
+    margin: 0;
+    height: 50px;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+  /* button styling */
+    --border-right: 6px;
+    --text-stroke-color: rgb(229, 125, 111);
+    --animation-color: rgba(203, 128, 46);
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 50px;
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .bannr-logo:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+  .header {
+      display: flex;
+      position: fixed;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      /* position: absolute; */
+      top: 0;
+      right: 0;
+      padding-right: 15px;
+  }
+
+  .home-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally in the container */
+    justify-content: center; /* Center vertically in the container */
+    height: 100vh; /* Use the full viewport height */
+  }
+
+  .arrow {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    padding-bottom: 50px;
+    opacity: 0.4;
+    
+  }
+
+  .scroll-text {
+    width: 45px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    padding-bottom: 70px;
+    opacity: 0.4;
+  }
+  
+
   /* ----------------------- LOGIN/SIGNUP buttons ----------------------- */ 
   .container {
     display: flex;
     flex-direction: row; /* Adjust based on your specific layout needs */
     /* Remove position: absolute; to let it naturally flow below the .bannr-home button */
     margin-top: 20px; /* Add some space between the button and the container */
+}
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
   
   .radio-wrapper {
@@ -397,6 +537,246 @@ body {
     border-color: rgb(229, 125, 111);
   }
   
-  
+/* ----------------------- Card Containers ----------------------- */
+.card {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    background: rgba(203, 128, 47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100%;
+    left: 50%;
+    margin-bottom:35px;
+    transform: translate(-50%);
+    border-radius: 50px;
+  }
 
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#313131,#717171);
+    border-radius: 50px; /*-- ADD FOR Rounded Edges Info Card */
+  }
   
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,rgba(203, 128, 47),rgb(229, 125, 111, 0.4));
+    filter: blur(15px);
+  }
+  
+  /* Assuming this represents the title element's CSS */
+  .content .title {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transform: scale(1); /* Initially scale the title to 0 */
+    transition: transform 0.5s ease; /* Smooth transition for transform */
+    background-color: transparent;
+  }
+  
+  /* Show the title on hover */
+  .card:hover .content .title {
+    transform: scale(1); /* Scale title to 1 on hover */
+  }
+  
+  .info-text {
+    /* Styles for info-text, ensuring it's always visible */
+    color: rgb(229, 125, 111, 0.7); /* Example text color, adjust as needed */
+    padding: 20px; /* Add padding for better readability */
+    text-align: justify; /* Justify text for better presentation */
+    
+  }
+  
+  .card .content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s, bottom 0.5s; /* Adjust transitions as necessary */
+  }
+  
+  .card:hover .content {
+    bottom: 25px; /* Adjust as necessary for visual preference */
+  }
+  .card b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50px; /*-- ADD FOR Rounded Edges Info Card */
+    z-index: 2;
+  }
+  
+  .card img {
+    position: absolute;
+    z-index: 3;
+    scale: 0.8;
+    opacity: 0.25;
+    transition: 0.5s;
+  }
+  
+  .card:hover img {
+    scale: 0.5;
+    opacity: 0.9;
+    transform: translateY(-70px);
+  }
+  .content .title span {
+    font-weight: 300;
+    font-size: 0.70em;
+  }
+  
+  .content .sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .sci li {
+    list-style: none;
+  }
+  
+  .sci li .fa-brands {
+    width: 14px;
+  }
+  
+  .sci li .fa-facebook {
+    width: 10px;
+  }
+  
+  .sci li a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  
+  .sci li a:hover {
+    fill: currentColor;
+    color: rgba(255, 255, 255, 1);
+  }
+  .info-button {
+    --glow-color: rgba(203, 128, 47, 0.4);
+    --glow-spread-color: rgb(254 139 128 / 70%);
+    --enhanced-glow-color: rgb(255 148 136 / 70%);
+    --btn-color: rgb(100, 61, 136);
+    border: 2px solid rgba(203, 128, 47);;
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    height: 100%;
+    /*  padding: 0.8em 1.8em;
+
+ position: relative;
+ overflow: hidden;
+ background-color: transparent;
+ font-family: inherit;
+ */
+   }
+   
+   .info-button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .info-button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   .info-button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+
+/* ----------------------- Login logo ----------------------- */
+
+.small-logo {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: rgba(203, 128, 47);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+  /* ----------------------- Footer ----------------------- */ 
+  .footer{
+    /* display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    padding-top: 15px; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    background: rgba(39, 39, 39, 0.0); /* Optional: make footer slightly transparent */
+    z-index: 1000; /* Ensure footer is above other content */
+}
+.footer-marquee{
+    color: rgba(203, 128, 47);
+    text-transform: uppercase;
+}

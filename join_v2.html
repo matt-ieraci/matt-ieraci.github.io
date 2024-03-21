@@ -7,7 +7,27 @@
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div></div>
+    <div>
+        <button class="logo-to-home"><a href="homepage.html"><span class="small-logo">BANNR</span></a></button>
+    </div>
+    <div class="home-container">
+        <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-1" type="radio">
+            <div class="btn">
+                <span aria-hidden="">_</span>Login
+                <span class="btn__glitch" aria-hidden="">_Login🦾</span>
+                <label class="number">r1</label>
+            </div>
+        </div>
+        <div class="radio-wrapper">
+            <input class="input" name="btn" id="value-3" type="radio">
+            <div class="btn">
+                info_<span aria-hidden=""></span>
+                <span class="btn__glitch" aria-hidden="">_info_</span>
+                <label class="number">r3</label>
+            </div> 
+        </div>
+    </div>
     <div class="form-container">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
         <form class="form">
@@ -30,4 +50,16 @@
         </form>
       </div>
 </body>
+<script>
+     document.getElementById('value-1').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = 'login_v2.html';
+        }
+    });
+    document.getElementById('value-3').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = 'info.html';
+        }
+    });
+</script>
 </html>
